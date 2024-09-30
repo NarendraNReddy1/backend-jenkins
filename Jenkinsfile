@@ -14,7 +14,8 @@ pipeline {
         stage('read the version'){
             steps{
                 script{
-                    appVersion = packageJson.version
+                    def packageJson = readJSON file: 'package.json'
+                    def appVersion = packageJson.version
                     echo "application version: $appVersion"
                 }
             }    
@@ -33,7 +34,7 @@ pipeline {
     post { 
         always { 
             echo 'I will always say Hello again!'
-            deleteDir()
+           // deleteDir()
         }
         success { 
             echo 'I will run when pipeline is success'
