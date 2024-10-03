@@ -108,7 +108,7 @@ pipeline {
                 }
             }
         }
-        /* stage('Deploy'){
+        stage('Deploy'){
             when{
                 expression{
                     params.deploy
@@ -122,7 +122,7 @@ pipeline {
                     build job: 'backend-deploy', parameters: params, wait: false
                 }
             }
-        } */
+        }
     }
     post { 
         always { 
