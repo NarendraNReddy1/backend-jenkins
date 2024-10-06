@@ -109,11 +109,11 @@ pipeline {
             }
         }
         stage('Deploy'){
-            when{
-                expression{
-                    params.deploy
-                }
-            }
+            // when{
+            //     expression{
+            //         params.deploy
+            //     }
+            // }
             steps{
                 script{
                     def params = [
