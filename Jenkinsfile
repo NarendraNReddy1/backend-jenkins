@@ -66,18 +66,18 @@ pipeline {
         //     }
         // }
         
-        // stage('Sonar Scan'){
-        //     environment {
-        //         scannerHome = tool 'sonar-6.0' //referring scanner CLI
-        //     }
-        //     steps {
-        //         script {
-        //             withSonarQubeEnv('sonar-6.0') { //referring sonar server
-        //                 sh "${scannerHome}/bin/sonar-scanner"
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Sonar Scan'){
+            environment {
+                scannerHome = tool 'sonar-6.0' //referring scanner CLI
+            }
+            steps {
+                script {
+                    withSonarQubeEnv('sonar-6.0') { //referring sonar server
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
 
         /* stage("Quality Gate") {
             steps {
